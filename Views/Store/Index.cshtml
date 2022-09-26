@@ -1,0 +1,23 @@
+@model List<StoresManager.ViewModels.StoreViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Lojas";
+}
+
+<h1>Lista de Lojas</h1><hr>
+
+@if (Model.Count == 0)
+{
+    <p>Nenhuma loja cadastrada até o momento.</p>
+}
+else
+{
+    <p>Lojas cadastradas:</p>
+
+    @foreach (var store in Model)
+    {
+        <br><h4>@store.Name</h4>
+        <h6>@store.Description</h6>
+        <p>@store.Type no @store.Floor.<br> E-mail para contato: @store.Email.</p>
+    }
+}
